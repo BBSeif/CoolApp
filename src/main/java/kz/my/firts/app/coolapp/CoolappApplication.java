@@ -10,18 +10,19 @@ public class CoolappApplication {
 	public static void main(String[] args) {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-		Music music = context.getBean("classicalMusic", Music.class);
-		MusicPlayer musicPlayer = new MusicPlayer(music);
+//		Music music = context.getBean("classicalMusic", Music.class);
+//		MusicPlayer musicPlayer = new MusicPlayer(music);
+//
+//		musicPlayer.playMusic();
+//
+//		Music music1 = context.getBean("rockMusic", Music.class);
+//		MusicPlayer musicPlayer1 = new MusicPlayer(music1);
+//
+//		System.out.println(musicPlayer1.toString());
+//		musicPlayer1.playMusic();
 
+		MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 		musicPlayer.playMusic();
-
-		Music music1 = context.getBean("rockMusic", Music.class);
-		MusicPlayer musicPlayer1 = new MusicPlayer(music1);
-
-		System.out.println(musicPlayer1.toString());
-		musicPlayer1.playMusic();
-
-
 		context.close();
 		//SpringApplication.run(CoolappApplication.class, args);
 	}
