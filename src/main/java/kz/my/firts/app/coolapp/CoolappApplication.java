@@ -22,7 +22,8 @@ public class CoolappApplication {
 //		musicPlayer1.playMusic();
 
 		MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-		musicPlayer.playMusic();
+		musicPlayer.playMusic(musicGenre.ROCK);
+		musicPlayer.playMusic(musicGenre.CLASSICAL);
 		context.close();
 		//SpringApplication.run(CoolappApplication.class, args);
 	}
